@@ -19,8 +19,12 @@ body {
 }
 
 body.dark-mode {
-  background-color: #181a1b;
-  color: var(--text-light);
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
 }
 
 .navbar {
@@ -187,7 +191,7 @@ h5 {
 }
 
 .card.project-card .card-text {
-  color: #444;
+  color: #171212;
   font-size: 1rem;
   margin-bottom: 1.2rem;
 }
@@ -703,38 +707,6 @@ body.dark-mode .form-select {
   border-color: #444;
 }
 
-.carousel-item img[data-aos] {
-  transition: transform 0.6s cubic-bezier(.4, 1.6, .6, 1), box-shadow 0.3s;
-}
-
-.carousel-item.active img[data-aos] {
-  transform: scale(1.06);
-  box-shadow: 0 6px 32px #0d6efd22;
-}
-
-.carousel-item img[data-aos]:not(.aos-animate) {
-  transform: scale(0.92);
-  opacity: 0.7;
-}
-
-.social-animate {
-  transition: transform 0.22s cubic-bezier(.34, 1.56, .64, 1), color 0.18s;
-  will-change: transform, color;
-}
-
-.social-animate:hover,
-.social-animate:focus {
-  transform: rotate(-12deg) scale(1.18);
-  color: #0d6efd !important;
-  filter: drop-shadow(0 2px 8px #6c63ff44);
-}
-
-body.dark-mode .social-animate:hover,
-body.dark-mode .social-animate:focus {
-  color: #25d366 !important;
-  filter: drop-shadow(0 2px 12px #25d36655);
-}
-
 /* Loader animado moderno */
 #loader {
   position: fixed;
@@ -842,6 +814,29 @@ h5 {
   margin-bottom: 2rem;
 }
 
+.project-images {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-images img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+@media (max-width: 575px) {
+  .project-images img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 @media (max-width: 991px) {
 
   section.container,
@@ -910,4 +905,39 @@ h5 {
     border-radius: 0.7rem 0.7rem 0 0;
     padding: 1.2rem 0.5rem;
   }
+}
+
+body.dark-mode .modal-content,
+body.dark-mode .modal-body,
+body.dark-mode .modal-content p,
+body.dark-mode .modal-content .card-text {
+  background: #23272f !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .modal-content p,
+body.dark-mode .modal-content .card-text {
+  color: #ffffff !important;
+}
+
+body.dark-mode .modal-content strong {
+  color: #f3f3f3 !important;
+}
+
+body.dark-mode .modal-content .badge {
+  color: #ffffff !important;
+}
+
+#projectModal .carousel-control-prev-icon,
+#projectModal .carousel-control-next-icon {
+  background-color: #000 !important;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-size: 60% 60%;
+}
+
+#projectModal .carousel-control-prev,
+#projectModal .carousel-control-next {
+  filter: none !important;
 }
