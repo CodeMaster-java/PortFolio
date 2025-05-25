@@ -1,10 +1,10 @@
-// Lista de projetos
+// Corrigir caminhos das imagens para serem relativos à página projects.html
 const projects = [
   {
     title: "YoutuberConvert",
     description: "Aplicativo para baixar vídeos do YouTube com interface gráfica.",
-    image: "img/youtuberconvert.png",
-    images: ["img/youtuberconvert.png"],
+    image: "../img/youtuberconvert.png",
+    images: ["../img/youtuberconvert.png"],
     github: "https://github.com/sempai23w/YoutubeConvert",
     featured: true,
     details: "Este projeto foi desenvolvido em Python utilizando Tkinter para a interface gráfica e Pytube para o download de vídeos do YouTube. Inclui um ícone personalizado e segue uma estrutura modular com arquivos como main.py, gui.py e downloader.py. As dependências são gerenciadas com um arquivo requirements.txt.",
@@ -14,12 +14,12 @@ const projects = [
   {
     title: "WorkTime Control",
     description: "Sistema para controle de tempo de trabalho com backend e frontend integrados.",
-    image: "img/dashboardworktime.png",
+    image: "../img/dashboardworktime.png",
     images: [
-      "img/dashboardworktime.png",
-      "img/loginworktime.png",
-      "img/paineladmworktime.png",
-      "img/registerworktime.png"
+      "../img/dashboardworktime.png",
+      "../img/loginworktime.png",
+      "../img/paineladmworktime.png",
+      "../img/registerworktime.png"
     ],
     github: "https://github.com/sempai23w/WorkTime-Control",
     featured: true,
