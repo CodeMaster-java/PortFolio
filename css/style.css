@@ -289,9 +289,8 @@ footer {
 
 @media (max-width: 575px) {
   .footer-main {
-    font-size: 0.98rem;
-    border-radius: 0.7rem 0.7rem 0 0;
-    padding: 1.2rem 0.5rem;
+    font-size: 0.92rem;
+    padding: 0.7rem 0.2rem;
   }
 }
 
@@ -447,6 +446,69 @@ footer {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 1.5rem;
+  }
+}
+
+/* Ajustes extras de responsividade: garante que colunas, cards, imagens e textos fiquem 100% largura e bem dimensionados em telas pequenas, incluindo celulares menores. */
+@media (max-width: 575px) {
+
+  .row.g-4>[class^="col-"],
+  .row.g-3>[class^="col-"],
+  .row.g-2>[class^="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .card.project-card,
+  .card,
+  .bg-white.p-4 {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .card.project-card .card-img-top {
+    height: 110px;
+  }
+
+  .footer-main {
+    font-size: 0.92rem;
+    padding: 0.7rem 0.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1rem;
+    word-break: break-word;
+  }
+
+  .hero-content p.lead {
+    font-size: 0.92rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.3rem;
+  }
+
+  .rounded-circle {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .project-images img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-content h1 {
+    font-size: 0.85rem;
+  }
+
+  .footer-main {
+    font-size: 0.8rem;
   }
 }
 
@@ -901,9 +963,8 @@ h5 {
 
 @media (max-width: 575px) {
   .footer-main {
-    font-size: 0.98rem;
-    border-radius: 0.7rem 0.7rem 0 0;
-    padding: 1.2rem 0.5rem;
+    font-size: 0.92rem;
+    padding: 0.7rem 0.2rem;
   }
 }
 
