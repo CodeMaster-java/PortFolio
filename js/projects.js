@@ -23,7 +23,7 @@ const projects = [
     ],
     github: "https://github.com/sempai23w/WorkTime-Control",
     featured: true,
-    details: "Este projeto foi desenvolvido utilizando JavaScript tanto no backend quanto no frontend. O backend utiliza Node.js e possivelmente Express.js para criar APIs, enquanto o frontend é estruturado com HTML e estilizado com CSS. O banco de dados SQLite é usado para armazenar informações, indicado pelo arquivo database.db. As dependências são gerenciadas com npm, conforme indicado pelo arquivo package.json.",
+    details: "Este projeto foi desenvolvido utilizando JavaScript tanto no backend quanto no frontend. O backend utiliza Node.js e Express.js para criar APIs, enquanto o frontend é estruturado com HTML e estilizado com CSS. O banco de dados SQLite é usado para armazenar informações, indicado pelo arquivo database.db. As dependências são gerenciadas com npm, conforme indicado pelo arquivo package.json.",
     tech: ["JavaScript", "Node.js", "SQLite", "HTML", "CSS"],
     private: true
   }
