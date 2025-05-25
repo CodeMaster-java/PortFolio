@@ -9,7 +9,7 @@ const projects = [
     featured: true,
     details: "Este projeto foi desenvolvido em Python utilizando Tkinter para a interface gráfica e Pytube para o download de vídeos do YouTube. Inclui um ícone personalizado e segue uma estrutura modular com arquivos como main.py, gui.py e downloader.py. As dependências são gerenciadas com um arquivo requirements.txt.",
     tech: ["Python", "Tkinter", "Pytube"],
-    private: true
+    private: false
   },
   {
     title: "WorkTime Control",
