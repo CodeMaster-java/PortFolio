@@ -143,10 +143,10 @@
                 titleEl.textContent = `Imagens do Projeto: ${project.title}`;
                 imagesContainer.innerHTML = project.images.map((img, idx) => `
           <div class="gallery-item">
-            <img src="${img}" class="gallery-img" alt="${project.title} ${idx + 1}">
+            <img src="../${img}" class="gallery-img" alt="${project.title} ${idx + 1}">
             <div class="gallery-caption">Imagem ${idx + 1}</div>
             <div class="gallery-actions">
-              <button class="btn btn-outline-dark" onclick="window.open('${img}','_blank')"><i class='fa-solid fa-up-right-from-square me-1'></i>Especionar imagem</button>
+              <button class="btn btn-outline-dark" onclick="window.open('../${img}','_blank')"><i class='fa-solid fa-up-right-from-square me-1'></i>Especionar imagem</button>
             </div>
           </div>
         `).join('');
