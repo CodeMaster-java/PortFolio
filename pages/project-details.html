@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Projeto | Meu Portfólio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Robson Jose</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-user"></i> Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fa-solid fa-folder-open"></i> Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="container py-5 animate__animated animate__fadeInUp" role="region" aria-labelledby="detalhes-titulo" data-aos="fade-up">
+    <h2 class="fw-bold visually-hidden" id="detalhes-titulo">Detalhes do Projeto</h2>
+    <div id="project-details-content" aria-live="polite">
+      <!-- Detalhes do projeto serão carregados via JS -->
+    </div>
+    <div class="mt-4">
+      <a href="projects.html" class="btn btn-outline-primary" aria-label="Voltar para a lista de projetos"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar para Projetos</a>
+    </div>
+  </section>
+  <script src="../js/projects.js"></script>
+  <button id="darkModeToggle" title="Alternar modo escuro/claro"><i class="fa-solid fa-moon"></i></button>
+  <script>
+    // Dark mode toggle
+    const darkModeBtn = document.getElementById('darkModeToggle');
+    function setDarkMode(on) {
+      document.body.classList.toggle('dark-mode', on);
+      localStorage.setItem('darkMode', on ? '1' : '0');
+      darkModeBtn.innerHTML = on ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+    }
+    darkModeBtn.addEventListener('click', () => {
+      setDarkMode(!document.body.classList.contains('dark-mode'));
+    });
+    // Inicialização
+    setDarkMode(localStorage.getItem('darkMode') === '1');
+  </script>
+  <script>
+    // Busca o projeto pelo nome na query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectName = urlParams.get('project');
+    const project = projects.find(p => p.title === projectName);
+    const container = document.getElementById('project-details-content');
+    if (project) {
+      container.innerHTML = `
+        <h2 class="fw-bold mb-3">${project.title}</h2>
+        <img src="../${project.image}" class="img-fluid rounded mb-4" alt="${project.title}" style="max-width:400px;">
+        <div class="mb-3">
+          ${(project.tech||[]).map(t => `<span class='badge bg-primary me-1'>${t}</span>`).join(' ')}
+        </div>
+        <p class="lead">${project.details}</p>
+        <p><strong>Descrição curta:</strong> ${project.description}</p>
+        <a href="${project.github}" class="btn btn-dark" target="_blank"><i class="fa-brands fa-github"></i> Ver no GitHub</a>
+      `;
+    } else {
+      container.innerHTML = '<div class="alert alert-danger">Projeto não encontrado.</div>';
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
