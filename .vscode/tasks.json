@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Abrir Portfolio",
+      "type": "shell",
+      "command": "start microsoft-edge:index.html",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
