@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
       color: 'from-blue-600 to-blue-800',
       category: t('categoryWebDevelopment'),
       liveUrl: window.location.href,
-      repoUrl: 'https://github.com/username/portfolio',
+      repoUrl: 'https://github.com/sempai23w/PortFolio.git',
       features: [
         'Design responsivo em múltiplos dispositivos',
         'Suporte a temas claro e escuro',
