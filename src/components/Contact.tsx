@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Instagram, CheckCircle, XCircle } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
+
+// Endpoint do Formspree definido em .env (ex: VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/abcdefg)
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string;
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+  // Estado para controle de envio
+  const [status, setStatus] = useState<'IDLE' | 'SENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setStatus('SENDING');
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) setStatus('SUCCESS');
+      else setStatus('ERROR');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setStatus('ERROR');
+      setFormData({ name: '', email: '', message: '' });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -190,6 +207,22 @@ const Contact: React.FC = () => {
                   <span>{t('sendMessage')}</span>
                 </button>
               </form>
+              {/* Feedback Card */}
+              {status !== 'IDLE' && (
+                <div className={`mt-6 p-4 rounded-lg shadow-md flex items-center ${status === 'SUCCESS'
+                  ? 'bg-green-50 dark:bg-green-900 border-l-4 border-green-500'
+                  : 'bg-red-50 dark:bg-red-900 border-l-4 border-red-500'
+                  }`}>
+                  {status === 'SUCCESS' ? (
+                    <CheckCircle className="w-6 h-6 text-green-500" />
+                  ) : (
+                    <XCircle className="w-6 h-6 text-red-500" />
+                  )}
+                  <p className="ml-3 text-sm text-gray-700 dark:text-gray-300">
+                    {status === 'SUCCESS' ? t('contactSuccess') : t('contactError')}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
