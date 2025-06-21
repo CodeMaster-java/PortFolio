@@ -73,7 +73,7 @@ export const translations: Translations = {
   expLocation: { pt: 'Online', en: 'Online', es: 'En línea' },
   expDescription: { pt: 'Atuação ativa em fóruns e comunidades de tecnologia, ajudando outros desenvolvedores.', en: 'Active participation in tech forums and communities, helping other developers.', es: 'Participación activa en foros y comunidades de tecnología, ayudando a otros desarrolladores.' },
   expAch1: { pt: 'Serviços freelancer em projetos diversos de backend e APIs', en: 'Freelance services in various backend and API projects', es: 'Servicios freelance en diversos projetos de backend e APIs' },
-  expAch2: { pt: 'Colaboração em projetos open source e suporte técnico voluntário', en: 'Collaboration on open source projects and volunteer tech support', es: 'Colaboración en proyectos de código aberto e suporte técnico voluntario' },
+  expAch2: { pt: 'Colaboração em projetos open source e suporte técnico voluntário', en: 'Collaboration on open source projects and volunteer tech support', es: 'Colaboración en projetos de código aberto e suporte técnico voluntario' },
   expAch3: { pt: 'Desenvolvimento e manutenção do próprio portfolio', en: 'Development and maintenance of own portfolio', es: 'Desarrollo e manutenção de mi próprio portafolio' },
   // Experience Technologies
   techBackend: { pt: 'Backend', en: 'Backend', es: 'Backend' },
@@ -88,7 +88,7 @@ export const translations: Translations = {
     es: 'Siempre estoy abierto a nuevos desafíos e oportunidades'
   },
   contactHeader: { pt: 'Entre em Contato', en: 'Get in Touch', es: 'Ponte en Contacto' },
-  contactText: { pt: 'Estou sempre interessado em novos projetos e oportunidades de colaboração. Seja para desenvolvimento de APIs, criação de bots ou sistemas escaláveis, vamos conversar sobre como posso ajudar você.', en: 'I am always interested in new projects and collaboration opportunities. Whether it’s API development, bot creation, or scalable systems, let’s discuss how I can help you.', es: 'Siempre estoy interesado en nuevos proyectos y oportunidades de colaboración. Ya sea desenvolvimento de APIs, creación de bots o sistemas escalables, hablemos sobre cómo puedo ayudarte.' },
+  contactText: { pt: 'Estou sempre interessado em novos projetos e oportunidades de colaboração. Seja para desenvolvimento de APIs, criação de bots ou sistemas escaláveis, vamos conversar sobre como posso ajudar você.', en: 'I am always interested in new projects and collaboration opportunities. Whether it’s API development, bot creation, or scalable systems, let’s discuss how I can help you.', es: 'Siempre estoy interesado en nuevos projetos e oportunidades de colaboração. Ya sea desenvolvimento de APIs, creación de bots o sistemas escaláveis, hablemos sobre cómo puedo ayudarte.' },
   phone: { pt: 'Telefone', en: 'Phone', es: 'Teléfono' },
   location: { pt: 'Localização', en: 'Location', es: 'Ubicación' },
   socialTitle: { pt: 'Redes Sociais', en: 'Social Links', es: 'Redes Sociales' },
@@ -99,6 +99,9 @@ export const translations: Translations = {
   name: { pt: 'Nome', en: 'Name', es: 'Nombre' },
   email: { pt: 'Email', en: 'Email', es: 'Email' },
   message: { pt: 'Mensagem', en: 'Message', es: 'Mensaje' },
+  sendMessage: { pt: 'Enviar Mensagem', en: 'Send Message', es: 'Enviar Mensaje' },
+  contactSuccess: { pt: 'Contato realizado com sucesso!', en: 'Message sent successfully!', es: '¡Mensaje enviado con éxito!' },
+  contactError: { pt: 'Ocorreu um erro ao enviar. Por favor, tente novamente.', en: 'Error sending message. Please try again.', es: 'Error al enviar. Por favor, inténtalo de nuevo.' },
 
   // Theme
   darkMode: { pt: 'Modo Escuro', en: 'Dark Mode', es: 'Modo Oscuro' },
