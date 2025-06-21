@@ -18,5 +18,14 @@
         "titleBar.inactiveBackground": "#1857a499",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#1857a4"
+    "css.lint.unknownAtRules": "ignore",
+    "postcss.lint.unknownAtRules": "ignore",
+    "tailwindCSS.validate": true,
+    "tailwindCSS.includeLanguages": {
+        "javascript": "javascript",
+        "typescript": "typescript",
+        "typescriptreact": "typescriptreact",
+        "html": "html",
+        "css": "css"
+    }
 }
