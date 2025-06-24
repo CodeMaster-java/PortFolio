@@ -17,7 +17,9 @@ import {
   SiLua,
   SiGit,
   SiGithub,
-  SiVscodium
+  SiVscodium,
+  SiPhp,
+  SiChartdotjs
 } from 'react-icons/si';
 
 const Skills: React.FC = () => {
@@ -32,13 +34,15 @@ const Skills: React.FC = () => {
     { name: 'Tailwind CSS', level: 100, color: 'from-teal-500 to-cyan-500' },
     { name: 'JavaScript', level: 100, color: 'from-yellow-500 to-orange-500' },
     { name: 'TypeScript', level: 60, color: 'from-blue-600 to-indigo-600' },
+    { name: 'Chart.js', level: 65, color: 'from-pink-500 to-red-500' },
   ];
 
   const backendSkills = [
     { name: 'Node.js', level: 100, color: 'from-green-500 to-emerald-500' },
     { name: 'Python', level: 100, color: 'from-blue-500 to-indigo-600' },
+    { name: 'PHP', level: 75, color: 'from-purple-600 to-purple-800' },
     { name: 'Java', level: 20, color: 'from-red-600 to-red-800' },
-    { name: 'MySQL', level: 20, color: 'from-blue-600 to-blue-800' },
+    { name: 'MySQL', level: 70, color: 'from-blue-600 to-blue-800' },
     { name: 'SQLite', level: 60, color: 'from-green-500 to-lime-500' },
     { name: 'Lua', level: 60, color: 'from-teal-500 to-green-500' },
     { name: 'C#', level: 20, color: 'from-gray-600 to-gray-800' },
@@ -65,8 +69,10 @@ const Skills: React.FC = () => {
     'Tailwind CSS': <SiTailwindcss className="w-5 h-5 text-teal-500" />,
     JavaScript: <SiJavascript className="w-5 h-5 text-yellow-500" />,
     TypeScript: <SiTypescript className="w-5 h-5 text-blue-600" />,
+    'Chart.js': <SiChartdotjs className="w-5 h-5 text-pink-500" />,
     'Node.js': <SiNodedotjs className="w-5 h-5 text-green-600" />,
     Python: <SiPython className="w-5 h-5 text-blue-500" />,
+    PHP: <SiPhp className="w-5 h-5 text-purple-600" />,
     Java: <Coffee className="w-5 h-5 text-red-600" />,
     MySQL: <SiMysql className="w-5 h-5 text-blue-600" />,
     SQLite: <SiSqlite className="w-5 h-5 text-indigo-500" />,

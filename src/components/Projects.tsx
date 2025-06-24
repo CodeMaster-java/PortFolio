@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { ExternalLink, Github, X, Clock } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { SiReact, SiTypescript, SiVite, SiTailwindcss } from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
@@ -13,12 +13,18 @@ const Projects: React.FC = () => {
     TypeScript: 'from-blue-600 to-indigo-600',
     Vite: 'from-green-500 to-teal-500',
     'Tailwind CSS': 'from-teal-500 to-cyan-500',
+    PHP: 'from-purple-600 to-purple-800',
+    MySQL: 'from-orange-500 to-orange-700',
+    'Chart.js': 'from-pink-500 to-red-500',
   };
   const techIcons: Record<string, JSX.Element> = {
     React: <SiReact className="w-4 h-4" />,
     TypeScript: <SiTypescript className="w-4 h-4" />,
     Vite: <SiVite className="w-4 h-4" />,
     'Tailwind CSS': <SiTailwindcss className="w-4 h-4" />,
+    PHP: <span className="w-4 h-4 text-xs font-bold">PHP</span>,
+    MySQL: <span className="w-4 h-4 text-xs font-bold">SQL</span>,
+    'Chart.js': <span className="w-4 h-4 text-xs font-bold">📊</span>,
   };
 
   const projects = [
@@ -41,8 +47,48 @@ const Projects: React.FC = () => {
         'Tradução dinâmica com Context API',
         'Animações personalizadas com Tailwind CSS'
       ],
-    }
+    },
+    {
+      id: 2,
+      title: 'WorkTime System - Controle de Ponto',
+      description: 'Sistema completo de controle de ponto empresarial com autenticação, relatórios e painel administrativo.',
+      detailedDescription: 'Sistema profissional de gestão de tempo e presença desenvolvido com React TypeScript e PHP, featuring autenticação robusta, sistema de notificações por email, relatórios em PDF/CSV, painel administrativo completo e interface responsiva moderna.',
+      image: '/worktime-preview.png',  // Você pode criar uma screenshot do sistema
+      video: '/worktime-demo.mp4',    // Vídeo demonstrando as funcionalidades
+      technologies: ['React', 'TypeScript', 'PHP', 'MySQL', 'Tailwind CSS', 'Vite', 'Chart.js'],
+      icon: <Clock className="w-6 h-6" />,
+      color: 'from-emerald-600 to-emerald-800',
+      category: t('categoryWebDevelopment'),
+      liveUrl: 'https://worktime.firehosting.com.br',
+      repoUrl: null,
+      features: [
+        'Sistema de autenticação com múltiplos níveis de acesso',
+        'Registro de ponto com entrada, saída e pausas',
+        'Painel administrativo para gestão de usuários',
+        'Relatórios detalhados com exportação PDF/CSV',
+        'Sistema de notificações por email automatizado',
+        'Interface responsiva para desktop, tablet e mobile',
+        'Dashboard com gráficos e análises em tempo real',
+        'Configurações flexíveis de horários e regras',
+        'Sistema de solicitação de acesso para novos usuários',
+        'Fuso horário configurado para Brasília (UTC-3)'
+      ],
+      highlights: [
+        'Hospedado na Hostinger com deploy profissional',
+        'Backend PHP robusto com arquitetura MVC',
+        'Frontend React moderno com TypeScript',
+        'Sistema CORS configurado para múltiplos domínios',
+        'Segurança avançada com validações e proteções'
+      ],
+      technicalDetails: {
+        frontend: 'React 18 + TypeScript + Vite + Tailwind CSS',
+        backend: 'PHP + MySQL com APIs RESTful',
+        hosting: 'Hostinger - Deploy profissional',
+        features: 'Autenticação, Relatórios, Notificações, Dashboard'
+      }
+    },
   ];
+
   // Estado para controle de modal de detalhes
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const openModal = (project: typeof projects[0]) => {
@@ -156,15 +202,17 @@ const Projects: React.FC = () => {
                         <ExternalLink className="w-4 h-4" />
                         <span>{t('viewProject')}</span>
                       </a>
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center space-x-1 bg-gray-700 dark:bg-gray-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:bg-gray-800 dark:hover:bg-gray-500"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>{t('github')}</span>
-                      </a>
+                      {project.repoUrl && (
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center space-x-1 bg-gray-700 dark:bg-gray-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:bg-gray-800 dark:hover:bg-gray-500"
+                        >
+                          <Github className="w-4 h-4" />
+                          <span>{t('github')}</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -232,15 +280,17 @@ const Projects: React.FC = () => {
                 <ExternalLink className="w-5 h-5" />
                 <span>{t('viewProject')}</span>
               </a>
-              <a
-                href={selectedProject.repoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center space-x-1 bg-gray-700 dark:bg-gray-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:bg-gray-800 dark:hover:bg-gray-500"
-              >
-                <Github className="w-5 h-5" />
-                <span>{t('github')}</span>
-              </a>
+              {selectedProject.repoUrl && (
+                <a
+                  href={selectedProject.repoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center space-x-1 bg-gray-700 dark:bg-gray-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:bg-gray-800 dark:hover:bg-gray-500"
+                >
+                  <Github className="w-5 h-5" />
+                  <span>{t('github')}</span>
+                </a>
+              )}
             </div>
           </div>
         </div>
