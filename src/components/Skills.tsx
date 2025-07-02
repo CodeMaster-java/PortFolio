@@ -28,24 +28,24 @@ const Skills: React.FC = () => {
   const frontendSkills = [
     { name: 'React', level: 60, color: 'from-blue-500 to-cyan-500' },
     { name: 'NextJs', level: 60, color: 'from-gray-700 to-black' },
-    { name: 'HTML', level: 100, color: 'from-red-500 to-pink-500' },
-    { name: 'CSS', level: 100, color: 'from-blue-500 to-cyan-500' },
+    { name: 'HTML', level: 100, color: 'from-orange-500 to-red-500' },
+    { name: 'CSS', level: 100, color: 'from-blue-500 to-blue-700' },
     { name: 'Bootstrap', level: 100, color: 'from-purple-500 to-pink-500' },
     { name: 'Tailwind CSS', level: 100, color: 'from-teal-500 to-cyan-500' },
-    { name: 'JavaScript', level: 100, color: 'from-yellow-500 to-orange-500' },
+    { name: 'JavaScript', level: 100, color: 'from-yellow-500 to-yellow-600' },
     { name: 'TypeScript', level: 60, color: 'from-blue-600 to-indigo-600' },
     { name: 'Chart.js', level: 65, color: 'from-pink-500 to-red-500' },
   ];
 
   const backendSkills = [
-    { name: 'Node.js', level: 100, color: 'from-green-500 to-emerald-500' },
-    { name: 'Python', level: 100, color: 'from-blue-500 to-indigo-600' },
+    { name: 'Node.js', level: 100, color: 'from-green-600 to-green-800' },
+    { name: 'Python', level: 100, color: 'from-green-500 to-blue-600' },
     { name: 'PHP', level: 75, color: 'from-purple-600 to-purple-800' },
     { name: 'Java', level: 20, color: 'from-red-600 to-red-800' },
-    { name: 'MySQL', level: 70, color: 'from-blue-600 to-blue-800' },
+    { name: 'MySQL', level: 70, color: 'from-orange-500 to-orange-700' },
     { name: 'SQLite', level: 60, color: 'from-green-500 to-lime-500' },
     { name: 'Lua', level: 60, color: 'from-teal-500 to-green-500' },
-    { name: 'C#', level: 20, color: 'from-gray-600 to-gray-800' },
+    { name: 'C#', level: 20, color: 'from-gray-700 to-gray-900' },
     { name: 'API', level: 75, color: 'from-indigo-500 to-blue-500' },
   ];
 

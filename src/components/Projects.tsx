@@ -1,7 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Github, X, Clock, Bot } from 'lucide-react';
+import { ExternalLink, Github, X, Clock, Bot, Coffee, Hash, Code } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
-import { SiReact, SiTypescript, SiVite, SiTailwindcss } from 'react-icons/si';
+import {
+  SiReact,
+  SiTypescript,
+  SiVite,
+  SiTailwindcss,
+  SiPhp,
+  SiMysql,
+  SiElectron,
+  SiNodedotjs,
+  SiJavascript,
+  SiPython,
+  SiCss3,
+  SiHtml5,
+  SiChartdotjs,
+  SiNextdotjs,
+  SiBootstrap,
+  SiSqlite,
+  SiLua,
+  SiGit,
+  SiGithub,
+  SiVscodium
+} from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
 
 const Projects: React.FC = () => {
@@ -22,21 +43,41 @@ const Projects: React.FC = () => {
     Python: 'from-green-500 to-blue-600',
     CSS: 'from-blue-500 to-blue-700',
     HTML: 'from-orange-500 to-red-500',
+    NextJs: 'from-gray-700 to-black',
+    Bootstrap: 'from-purple-500 to-pink-500',
+    Java: 'from-red-600 to-red-800',
+    SQLite: 'from-green-500 to-lime-500',
+    Lua: 'from-teal-500 to-green-500',
+    'C#': 'from-gray-700 to-gray-900',
+    API: 'from-indigo-500 to-blue-500',
+    Git: 'from-gray-600 to-gray-800',
+    GitHub: 'from-gray-700 to-gray-900',
+    VSCode: 'from-blue-400 to-blue-600',
   };
   const techIcons: Record<string, JSX.Element> = {
     React: <SiReact className="w-4 h-4" />,
     TypeScript: <SiTypescript className="w-4 h-4" />,
     Vite: <SiVite className="w-4 h-4" />,
     'Tailwind CSS': <SiTailwindcss className="w-4 h-4" />,
-    PHP: <span className="w-4 h-4 text-xs font-bold">PHP</span>,
-    MySQL: <span className="w-4 h-4 text-xs font-bold">SQL</span>,
-    'Chart.js': <span className="w-4 h-4 text-xs font-bold">📊</span>,
-    Electron: <span className="w-4 h-4 text-xs font-bold">⚡</span>,
-    'Node.js': <span className="w-4 h-4 text-xs font-bold">🟢</span>,
-    JavaScript: <span className="w-4 h-4 text-xs font-bold">JS</span>,
-    Python: <span className="w-4 h-4 text-xs font-bold">🐍</span>,
-    CSS: <span className="w-4 h-4 text-xs font-bold">💅</span>,
-    HTML: <span className="w-4 h-4 text-xs font-bold">📄</span>,
+    PHP: <SiPhp className="w-4 h-4" />,
+    MySQL: <SiMysql className="w-4 h-4" />,
+    'Chart.js': <SiChartdotjs className="w-4 h-4" />,
+    Electron: <SiElectron className="w-4 h-4" />,
+    'Node.js': <SiNodedotjs className="w-4 h-4" />,
+    JavaScript: <SiJavascript className="w-4 h-4" />,
+    Python: <SiPython className="w-4 h-4" />,
+    CSS: <SiCss3 className="w-4 h-4" />,
+    HTML: <SiHtml5 className="w-4 h-4" />,
+    NextJs: <SiNextdotjs className="w-4 h-4" />,
+    Bootstrap: <SiBootstrap className="w-4 h-4" />,
+    Java: <Coffee className="w-4 h-4" />,
+    SQLite: <SiSqlite className="w-4 h-4" />,
+    Lua: <SiLua className="w-4 h-4" />,
+    'C#': <Hash className="w-4 h-4" />,
+    API: <Code className="w-4 h-4" />,
+    Git: <SiGit className="w-4 h-4" />,
+    GitHub: <SiGithub className="w-4 h-4" />,
+    VSCode: <SiVscodium className="w-4 h-4" />,
   };
 
   const projects = [

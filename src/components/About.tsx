@@ -36,16 +36,16 @@ const About: React.FC = () => {
     'MySQL', 'SQLite', 'Lua', 'Git', 'C#', 'VSCode'
   ];
   const techColors: Record<string, string> = {
-    HTML: 'from-red-500 to-pink-500',
-    CSS: 'from-blue-500 to-cyan-500',
+    HTML: 'from-orange-500 to-red-500',
+    CSS: 'from-blue-500 to-blue-700',
     Bootstrap: 'from-purple-500 to-pink-500',
     'Tailwind CSS': 'from-teal-500 to-cyan-500',
-    JavaScript: 'from-yellow-500 to-orange-500',
+    JavaScript: 'from-yellow-500 to-yellow-600',
     TypeScript: 'from-blue-600 to-indigo-600',
-    'Node.js': 'from-green-500 to-emerald-500',
-    Python: 'from-blue-500 to-indigo-600',
+    'Node.js': 'from-green-600 to-green-800',
+    Python: 'from-green-500 to-blue-600',
     Java: 'from-red-600 to-red-800',
-    MySQL: 'from-blue-600 to-blue-800',
+    MySQL: 'from-orange-500 to-orange-700',
     SQLite: 'from-green-500 to-lime-500',
     Lua: 'from-teal-500 to-green-500',
     Git: 'from-gray-600 to-gray-800',
