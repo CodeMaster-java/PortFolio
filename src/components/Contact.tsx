@@ -8,7 +8,7 @@ const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string;
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   // Estado para controle de envio
-  const [status, setStatus] = useState<'IDLE' | 'SENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
+  const [status, setStatus] = useState<'IDLE' | 'SENDING' | 'SUCCESS' | 'ERROR' | 'NOT_CONFIGURED'>('IDLE');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +17,14 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Verificar se o endpoint está configurado
+    if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT === 'https://formspree.io/f/YOUR_FORM_ID_HERE') {
+      console.error('VITE_FORMSPREE_ENDPOINT não está configurado no arquivo .env');
+      setStatus('NOT_CONFIGURED');
+      return;
+    }
+
     setStatus('SENDING');
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -24,12 +32,15 @@ const Contact: React.FC = () => {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(formData)
       });
-      if (res.ok) setStatus('SUCCESS');
-      else setStatus('ERROR');
-      setFormData({ name: '', email: '', message: '' });
-    } catch {
+      if (res.ok) {
+        setStatus('SUCCESS');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('ERROR');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
       setStatus('ERROR');
-      setFormData({ name: '', email: '', message: '' });
     }
   };
 
@@ -211,15 +222,24 @@ const Contact: React.FC = () => {
               {status !== 'IDLE' && (
                 <div className={`mt-6 p-4 rounded-lg shadow-md flex items-center ${status === 'SUCCESS'
                   ? 'bg-green-50 dark:bg-green-900 border-l-4 border-green-500'
-                  : 'bg-red-50 dark:bg-red-900 border-l-4 border-red-500'
+                  : status === 'NOT_CONFIGURED'
+                    ? 'bg-yellow-50 dark:bg-yellow-900 border-l-4 border-yellow-500'
+                    : 'bg-red-50 dark:bg-red-900 border-l-4 border-red-500'
                   }`}>
                   {status === 'SUCCESS' ? (
                     <CheckCircle className="w-6 h-6 text-green-500" />
+                  ) : status === 'NOT_CONFIGURED' ? (
+                    <XCircle className="w-6 h-6 text-yellow-500" />
                   ) : (
                     <XCircle className="w-6 h-6 text-red-500" />
                   )}
                   <p className="ml-3 text-sm text-gray-700 dark:text-gray-300">
-                    {status === 'SUCCESS' ? t('contactSuccess') : t('contactError')}
+                    {status === 'SUCCESS'
+                      ? t('contactSuccess')
+                      : status === 'NOT_CONFIGURED'
+                        ? t('contactNotConfigured')
+                        : t('contactError')
+                    }
                   </p>
                 </div>
               )}

@@ -103,6 +103,7 @@ export const translations: Translations = {
   sendMessage: { pt: 'Enviar Mensagem', en: 'Send Message', es: 'Enviar Mensaje' },
   contactSuccess: { pt: 'Contato realizado com sucesso!', en: 'Message sent successfully!', es: '¡Mensaje enviado con éxito!' },
   contactError: { pt: 'Ocorreu um erro ao enviar. Por favor, tente novamente.', en: 'Error sending message. Please try again.', es: 'Error al enviar. Por favor, inténtalo de nuevo.' },
+  contactNotConfigured: { pt: 'Formulário de contato não configurado. Entre em contato diretamente por email.', en: 'Contact form not configured. Please contact directly via email.', es: 'Formulario de contacto no configurado. Por favor, contacta directamente por email.' },
 
   // Theme
   darkMode: { pt: 'Modo Escuro', en: 'Dark Mode', es: 'Modo Oscuro' },
