@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Github, X, Clock } from 'lucide-react';
+import { ExternalLink, Github, X, Clock, Bot } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { SiReact, SiTypescript, SiVite, SiTailwindcss } from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
@@ -16,6 +16,12 @@ const Projects: React.FC = () => {
     PHP: 'from-purple-600 to-purple-800',
     MySQL: 'from-orange-500 to-orange-700',
     'Chart.js': 'from-pink-500 to-red-500',
+    Electron: 'from-purple-500 to-indigo-600',
+    'Node.js': 'from-green-600 to-green-800',
+    JavaScript: 'from-yellow-500 to-yellow-600',
+    Python: 'from-green-500 to-blue-600',
+    CSS: 'from-blue-500 to-blue-700',
+    HTML: 'from-orange-500 to-red-500',
   };
   const techIcons: Record<string, JSX.Element> = {
     React: <SiReact className="w-4 h-4" />,
@@ -25,6 +31,12 @@ const Projects: React.FC = () => {
     PHP: <span className="w-4 h-4 text-xs font-bold">PHP</span>,
     MySQL: <span className="w-4 h-4 text-xs font-bold">SQL</span>,
     'Chart.js': <span className="w-4 h-4 text-xs font-bold">📊</span>,
+    Electron: <span className="w-4 h-4 text-xs font-bold">⚡</span>,
+    'Node.js': <span className="w-4 h-4 text-xs font-bold">🟢</span>,
+    JavaScript: <span className="w-4 h-4 text-xs font-bold">JS</span>,
+    Python: <span className="w-4 h-4 text-xs font-bold">🐍</span>,
+    CSS: <span className="w-4 h-4 text-xs font-bold">💅</span>,
+    HTML: <span className="w-4 h-4 text-xs font-bold">📄</span>,
   };
 
   const projects = [
@@ -53,8 +65,8 @@ const Projects: React.FC = () => {
       title: 'WorkTime System - Controle de Ponto',
       description: 'Sistema completo de controle de ponto empresarial com autenticação, relatórios e painel administrativo.',
       detailedDescription: 'Sistema profissional de gestão de tempo e presença desenvolvido com React TypeScript e PHP, featuring autenticação robusta, sistema de notificações por email, relatórios em PDF/CSV, painel administrativo completo e interface responsiva moderna.',
-      image: '/worktime-preview.png',  // Você pode criar uma screenshot do sistema
-      video: '/worktime-demo.mp4',    // Vídeo demonstrando as funcionalidades
+      image: '/worktime-preview.png',  // Capa local em /public
+      video: '/worktime-demo.mp4',    // Vídeo de demonstração local em /public
       technologies: ['React', 'TypeScript', 'PHP', 'MySQL', 'Tailwind CSS', 'Vite', 'Chart.js'],
       icon: <Clock className="w-6 h-6" />,
       color: 'from-emerald-600 to-emerald-800',
@@ -85,6 +97,49 @@ const Projects: React.FC = () => {
         backend: 'PHP + MySQL com APIs RESTful',
         hosting: 'Hostinger - Deploy profissional',
         features: 'Autenticação, Relatórios, Notificações, Dashboard'
+      }
+    },
+    {
+      id: 3,
+      title: 'BotDeck - Discord Bot Manager',
+      description: 'Gerencie, monitore e controle múltiplos bots Discord em um só lugar, com logs em tempo real e automações inteligentes.',
+      detailedDescription: 'BotDeck é um aplicativo desktop moderno desenvolvido com Electron e Node.js para centralizar o gerenciamento de bots Discord já existentes (Node.js e Python). Permite iniciar, parar, reiniciar e monitorar múltiplos bots simultaneamente, com detecção automática de arquivos principais, logs em tempo real, notificações, status visual, atalhos de teclado e interface dark mode profissional. Ideal para desenvolvedores que querem praticidade e controle total sobre seus bots.',
+      image: '/botdeck-preview.png',
+      video: '/botdeck-demo.mp4',
+      technologies: ['Electron', 'Node.js', 'JavaScript', 'Python', 'CSS', 'HTML'],
+      icon: <Bot className="w-6 h-6" />,
+      color: 'from-indigo-600 to-indigo-800',
+      category: t('categoryDesktopApp'),
+      liveUrl: null,
+      repoUrl: 'https://github.com/sempai23w/BotDeck.git',
+      features: [
+        'Gerenciamento de múltiplos bots Discord (Node.js e Python)',
+        'Detecção automática de arquivos principais (index.js, main.py, etc.)',
+        'Iniciar, parar e reiniciar bots individualmente ou todos de uma vez',
+        'Logs em tempo real (stdout/stderr) de cada bot',
+        'Status visual: online/offline',
+        'Modo escuro profissional',
+        'Ícone na bandeja com atalhos rápidos',
+        'Notificações toast para eventos importantes',
+        'Atalhos de teclado (Ctrl+N, Ctrl+R, Esc)',
+        'Armazenamento local seguro (electron-store)',
+        'Verificação automática de dependências',
+        'Encerramento seguro dos processos',
+        'Diagnóstico automático de problemas comuns',
+        'Suporte a múltiplos perfis de configuração'
+      ],
+      highlights: [
+        'Interface redesenhada e responsiva (2025)',
+        'Suporte aprimorado para bots Python (venv, requirements)',
+        'Logs coloridos e filtráveis',
+        'Performance otimizada para múltiplos bots',
+        'Arquitetura robusta com Electron e Node.js'
+      ],
+      technicalDetails: {
+        frontend: 'Electron + HTML + CSS + JavaScript',
+        backend: 'Node.js (processo principal Electron), integração com Python via child_process',
+        hosting: 'Aplicativo desktop (Windows, Linux, macOS)',
+        features: 'Gerenciamento de processos, logs em tempo real, notificações, armazenamento local'
       }
     },
   ];
@@ -193,15 +248,17 @@ const Projects: React.FC = () => {
 
                     {/* Actions */}
                     <div className="flex items-center space-x-3">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center space-x-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:from-blue-600 hover:to-blue-700"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>{t('viewProject')}</span>
-                      </a>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center space-x-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:from-blue-600 hover:to-blue-700"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>{t('viewProject')}</span>
+                        </a>
+                      )}
                       {project.repoUrl && (
                         <a
                           href={project.repoUrl}
@@ -271,15 +328,17 @@ const Projects: React.FC = () => {
               })}
             </div>
             <div className="flex space-x-4">
-              <a
-                href={selectedProject.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center space-x-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:from-blue-600 hover:to-blue-700"
-              >
-                <ExternalLink className="w-5 h-5" />
-                <span>{t('viewProject')}</span>
-              </a>
+              {selectedProject.liveUrl && (
+                <a
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center space-x-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1.5 rounded-lg shadow-md transform transition hover:-translate-y-1 hover:from-blue-600 hover:to-blue-700"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  <span>{t('viewProject')}</span>
+                </a>
+              )}
               {selectedProject.repoUrl && (
                 <a
                   href={selectedProject.repoUrl}
