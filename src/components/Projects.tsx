@@ -285,6 +285,13 @@ const Projects: React.FC = () => {
                           </span>
                         );
                       })}
+                      {/* Botão Ver Detalhe */}
+                      <button
+                        onClick={() => openModal(project)}
+                        className="mt-2 w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white px-3 py-1.5 rounded-lg shadow-md font-semibold transition-all duration-300 transform hover:-translate-y-1"
+                      >
+                        <span>Ver Detalhe</span>
+                      </button>
                     </div>
 
                     {/* Actions */}
