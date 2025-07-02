@@ -61,6 +61,7 @@ export const translations: Translations = {
   projectsTitle: { pt: 'Projetos em Destaque', en: 'Featured Projects', es: 'Proyectos Destacados' },
   viewProject: { pt: 'Ver Projeto', en: 'View Project', es: 'Ver Proyecto' },
   categoryWebDevelopment: { pt: 'Desenvolvimento Web', en: 'Web Development', es: 'Desarrollo Web' },
+  categoryDesktopApp: { pt: 'Aplicativo Desktop', en: 'Desktop Application', es: 'Aplicación de Escritorio' },
 
   // Experience Section
   experienceTitle: { pt: 'Experiência Profissional', en: 'Professional Experience', es: 'Experiencia Profesional' },
