@@ -112,7 +112,7 @@ const Projects: React.FC = () => {
       icon: <Clock className="w-6 h-6" />,
       color: 'from-emerald-600 to-emerald-800',
       category: t('categoryWebDevelopment'),
-      liveUrl: 'https://worktime.firehosting.com.br',
+      liveUrl: null,
       repoUrl: null,
       features: [
         'Sistema de autenticação com múltiplos níveis de acesso',
