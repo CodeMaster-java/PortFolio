@@ -116,9 +116,9 @@ const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
         </div>
       </section>
       {showToast && (
-        <div className="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg animate-fade-in-up flex items-center space-x-2">
-          <span>🚫</span>
-          <span>{t('cvUnavailable')}</span>
+        <div className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg animate-fade-in-up flex items-center space-x-2">
+          <span>✅</span>
+          <span>Currículo baixado!</span>
         </div>
       )}
     </>
