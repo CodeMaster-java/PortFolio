@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="text-gray-400 text-sm mt-4 md:mt-0 flex flex-col items-center">
-            <span>© 2024 Todos os direitos reservados</span>
+            <span>© 2025 Todos os direitos reservados</span>
             {/* CodeTime Badge */}
             <a
               href="https://codetime.dev"
