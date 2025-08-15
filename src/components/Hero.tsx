@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ChevronDown, Download, Eye } from 'lucide-react';
+import React from 'react';
+import { ChevronDown, Eye } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 
 interface HeroProps {
@@ -8,19 +8,6 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
   const { t } = useLanguage();
-  const [showToast, setShowToast] = useState(false);
-
-  const handleDownloadCV = () => {
-    // Cria um link temporário para download
-    const link = document.createElement('a');
-    link.href = '/Curriculo.pdf';
-    link.download = 'Curriculo-RobsonJose.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
-  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -97,10 +84,6 @@ const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
                 <span>{t('viewWork')}</span>
               </button>
 
-              <button onClick={handleDownloadCV} className="group flex items-center space-x-2 border-2 border-gray-400 text-gray-300 hover:border-blue-400 hover:text-blue-400 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>{t('downloadCV')}</span>
-              </button>
             </div>
 
             {/* Scroll Indicator */}
@@ -115,12 +98,6 @@ const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
           </div>
         </div>
       </section>
-      {showToast && (
-        <div className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg animate-fade-in-up flex items-center space-x-2">
-          <span>✅</span>
-          <span>Currículo baixado!</span>
-        </div>
-      )}
     </>
   );
 };
